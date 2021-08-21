@@ -1,6 +1,7 @@
 var socket = io();
 var mark;
 var currTurn;
+const TIC = 'X'
 const cellElements = document.querySelectorAll('.board > button')
 const winningCombinations = [
     [0, 1, 2],
@@ -20,7 +21,7 @@ $(function () {
         //Socket listener reached when 2 players are online and set to play
         socket.on('get starting position', function (data){
                mark = data.mark;
-               if(data.mark === 'X') {
+               if(data.mark === TIC) {
                        currTurn = true;
                        $("#messages").text("Your turn!")
                        $(".board button").attr("disabled", false);

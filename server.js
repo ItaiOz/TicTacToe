@@ -4,6 +4,9 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
+const TIC = 'X'
+const TAC = 'O'
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
@@ -47,13 +50,13 @@ io.sockets.on('connection', (socket) => {
 function initializePlayers(socket){
     //creating object for each player
     playerObject[socket.id] = {
-        mark: "X",
+        mark: TIC,
         opponent: playerJoined,
         socket: socket
     }
     if(playersCount % 2 === 0){
         playerObject[playerJoined].opponent = socket.id;
-        playerObject[socket.id].mark = "O";
+        playerObject[socket.id].mark = TAC;
         playerJoined = null;
     }
     else

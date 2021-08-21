@@ -4,10 +4,11 @@
 Mini-game was developed in JavaScript using NodeJs environment in order to take adavntage of express and scoket io frameworks to cummunicate between server and client side.
 
 ## Installation 
-1 - Clone repository
-2 - On terminal, open project's direcory and run npm / yarn install
-3 - Run "node server.js" to start the server
-4 - On your browser, enter "http://localhost:3000" 
+1 - Clone repository  <br/>
+2 - On terminal, open project's direcory and run npm / yarn install  <br/>
+3 - Run "node server.js" to start the server  <br/>
+4 - On your browser, enter "http://localhost:3000"  <br/>
+5 - Wait for player, or either join game and start playing
 
 Website has one screen which is the playing board. Game is starting once two players are connecting to the game.
 
